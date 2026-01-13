@@ -221,3 +221,23 @@ body, html {
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
 }
+.details-section {
+  padding: 3rem 0;
+  background: #f3f4f6;
+}
+
+.detail-box {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2563eb;
+  text-decoration: none;
+}
