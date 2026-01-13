@@ -107,17 +107,22 @@ body, html {
 }
 
 .info-card {
-  border: 3px solid #4b5563;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 6px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+    border: 3px solid rgb(76, 76, 74); /* Changed from #4b5563 */
+    padding: 1.5rem;
+    background: white;
+    border-radius: 6px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
 }
 
 .info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: rgb(76, 76, 74); /* Keep same color on hover */
 }
 
 .info-card h3 {
@@ -337,22 +342,24 @@ html {
     visibility: hidden;
 }
 
+/* Optional: Update the explanation card border to match */
 .explanation-card-content {
     background: white;
     border-radius: 12px;
     padding: 3rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
+    border: 1px solid rgb(76, 76, 74); /* Match the info-card border color */
     text-align: center;
     position: relative;
 }
 
+/* Update the h3 border in explanation cards to match the blue theme */
 .explanation-card-content h3 {
     font-size: 1.8rem;
     color: #111827;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #3b82f6;
+    border-bottom: 2px solid rgb(55, 65, 247); /* Match close button color */
     display: inline-block;
 }
 
@@ -371,20 +378,20 @@ html {
 .close-explanation {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: #f3f4f6;
-    color: #4b5563;
+    background: rgb(55, 65, 247); /* New blue color */
+    color: white; /* Changed from #4b5563 to white for better contrast */
     text-decoration: none;
     border-radius: 6px;
     font-weight: 500;
     transition: all 0.3s;
-    border: 1px solid #d1d5db;
-    margin-top: 1rem;
+    border: 1px solid rgb(55, 65, 247); /* Match border to background */
 }
 
 .close-explanation:hover {
-    background: #e5e7eb;
-    color: #111827;
+    background: rgb(45, 55, 220); /* Darker blue for hover */
+    color: white;
     transform: translateY(-2px);
+    border-color: rgb(45, 55, 220);
 }
 
 /* Info Card "more" link updates */
@@ -405,7 +412,7 @@ html {
     bottom: 12px;
     right: 12px;
     font-size: 0.9rem;
-    color: #3b82f6;
+    color: rgb(55, 65, 247); /* Match close button color */
     text-decoration: none;
     font-weight: 500;
     padding: 0.25rem 0.5rem;
@@ -414,8 +421,8 @@ html {
 }
 
 .more:hover {
-    background: #eff6ff;
-    color: #1d4ed8;
+    background: rgba(55, 65, 247, 0.1); /* Light blue background on hover */
+    color: rgb(45, 55, 220); /* Darker blue on hover */
     text-decoration: underline;
 }
 
