@@ -241,3 +241,6 @@ body, html {
   color: #2563eb;
   text-decoration: none;
 }
+html {
+  scroll-behavior: smooth;
+}
