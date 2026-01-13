@@ -1,10 +1,13 @@
-
 // script.js
-document.getElementById('year').textContent = new Date().getFullYear();
-
 
 // Smooth scrolling and explanation card handling
 document.addEventListener('DOMContentLoaded', function() {
+    // Update year in footer if element exists
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+    
     const explanationCards = document.querySelectorAll('.explanation-card');
     const defaultState = document.querySelector('.default-state');
     const closeButtons = document.querySelectorAll('.close-explanation');
@@ -40,7 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Smooth scroll to explanatory section
             const explanatorySection = document.querySelector('.explanatory-cards-section');
-            explanatorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (explanatorySection) {
+                explanatorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
     });
     
