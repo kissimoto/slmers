@@ -244,3 +244,17 @@ body, html {
 html {
   scroll-behavior: smooth;
 }
+.info-card {
+  position: relative;
+  /* existing styles */
+}
+
+.more {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-decoration: underline;
+  opacity: 0.7;
+}
