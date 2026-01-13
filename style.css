@@ -258,3 +258,200 @@ html {
   text-decoration: underline;
   opacity: 0.7;
 }
+
+/* Add to your existing CSS */
+
+/* Explanatory Cards Section */
+.explanatory-cards-section {
+    padding: 4rem 0;
+    background: #f3f4f6;
+    min-height: 500px;
+}
+
+.explanatory-cards-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Default State */
+.default-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s ease;
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.default-state h3 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.default-state p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.default-icon {
+    font-size: 3rem;
+    margin-top: 1rem;
+    opacity: 0.3;
+}
+
+/* Explanation Cards */
+.explanation-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.explanation-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+.default-state.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.default-state:not(.active),
+.explanation-card:not(.active) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.explanation-card-content {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    position: relative;
+}
+
+.explanation-card-content h3 {
+    font-size: 1.8rem;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3b82f6;
+    display: inline-block;
+}
+
+.explanation-card-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.explanation-card-content p:last-child {
+    margin-bottom: 2.5rem;
+}
+
+.close-explanation {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #f3f4f6;
+    color: #4b5563;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 1px solid #d1d5db;
+    margin-top: 1rem;
+}
+
+.close-explanation:hover {
+    background: #e5e7eb;
+    color: #111827;
+    transform: translateY(-2px);
+}
+
+/* Info Card "more" link updates */
+.info-card {
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-card p {
+    flex-grow: 1;
+    margin-bottom: 2.5rem;
+}
+
+.more {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    font-size: 0.9rem;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.more:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Responsive Design for Explanatory Cards */
+@media (max-width: 768px) {
+    .explanatory-cards-container {
+        padding: 0 1rem;
+    }
+    
+    .explanation-card-content {
+        padding: 2rem;
+    }
+    
+    .explanation-card-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .explanation-card-content p {
+        font-size: 1rem;
+    }
+    
+    .default-state {
+        padding: 3rem 1.5rem;
+    }
+    
+    .default-state h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .explanation-card-content {
+        padding: 1.5rem;
+    }
+    
+    .default-state {
+        padding: 2rem 1rem;
+    }
+}
