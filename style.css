@@ -150,19 +150,35 @@ body, html {
     font-size: 1.1rem;
   }
   
+  @media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
   .cta {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    padding: 0 1rem; /* Add this line - prevents edge overflow */
   }
   
   .btn {
-    width: auto; 
-    min-width: 280px; 
-    padding: 0.75rem 2rem; 
+    width: 100%; /* Change from auto to 100% */
+    max-width: 280px; /* Change from min-width to max-width */
     text-align: center;
+    padding: 0.75rem 1rem; /* Reduce padding from 2rem to 1rem */
+    box-sizing: border-box; /* Add this line - crucial for width calculation */
   }
 }
-
+  
 /* SMR Chart */
 .smr-chart-section {
   padding: 4rem 0;
@@ -462,4 +478,45 @@ html {
     .default-state {
         padding: 2rem 1rem;
     }
+}
+  /* Add a specific media query for very small phones */
+@media (max-width: 480px) {
+  .hero {
+    padding: 4rem 0; /* Reduce hero padding on very small screens */
+  }
+  
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .manifesto {
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+  
+  .cta {
+    padding: 0 0.5rem; /* Less padding on very small screens */
+  }
+  
+  .btn {
+    max-width: 100%; /* Allow it to take full width on very small screens */
+    padding: 0.75rem 0.75rem; /* Even smaller padding */
+    font-size: 0.95rem; /* Slightly smaller font */
+  }
+}
+
+/* For extremely small phones (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.9rem;
+  }
 }
