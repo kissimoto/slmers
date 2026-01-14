@@ -479,44 +479,4 @@ html {
         padding: 2rem 1rem;
     }
 }
-  /* Add a specific media query for very small phones */
-@media (max-width: 480px) {
-  .hero {
-    padding: 4rem 0; /* Reduce hero padding on very small screens */
-  }
-  
-  .hero h1 {
-    font-size: 1.75rem;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-  }
-  
-  .manifesto {
-    padding: 1rem;
-    margin: 1.5rem auto;
-  }
-  
-  .cta {
-    padding: 0 0.5rem; /* Less padding on very small screens */
-  }
-  
-  .btn {
-    max-width: 100%; /* Allow it to take full width on very small screens */
-    padding: 0.75rem 0.75rem; /* Even smaller padding */
-    font-size: 0.95rem; /* Slightly smaller font */
-  }
-}
 
-/* For extremely small phones (iPhone SE, etc.) */
-@media (max-width: 375px) {
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-  
-  .btn {
-    padding: 0.65rem 0.5rem;
-    font-size: 0.9rem;
-  }
-}
