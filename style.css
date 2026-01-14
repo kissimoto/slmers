@@ -449,3 +449,15 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+.btn-text {
+  background: transparent;
+  color: white;
+  text-decoration: underline;
+  padding: 0.5rem 0;
+  font-weight: normal;
+  border: none;
+  margin-top: 1rem;
+}
+.btn-text:hover {
+  opacity: 0.8;
+}
