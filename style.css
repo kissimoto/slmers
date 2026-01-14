@@ -70,7 +70,7 @@ body, html {
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: rgb(16, 185, 29); /* New RGB color */
+    background: rgb(16, 185, 29); 
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -156,8 +156,9 @@ body, html {
   }
   
   .btn {
-    width: 100%;
-    max-width: 300px;
+    width: auto; 
+    min-width: 280px; 
+    padding: 0.75rem 2rem; 
     text-align: center;
   }
 }
