@@ -461,3 +461,14 @@ html {
 .btn-text:hover {
   opacity: 0.8;
 }
+.use-cases-intro {
+  padding: 2rem 0;
+  text-align: center;
+  background: white;
+}
+.use-cases-intro p {
+  max-width: 700px;
+  margin: 0.75rem auto;
+  font-size: 1.1rem;
+  color: #374151;
+}
