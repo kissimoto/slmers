@@ -70,7 +70,7 @@ body, html {
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: rgb(16, 185, 29); 
+    background: rgb(16, 185, 29); /* New RGB color */
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -107,6 +107,12 @@ body, html {
 }
 
 .info-card {
+  border: 3px solid #4b5563;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 6px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
     border: 3px solid rgb(76, 76, 74); /* Changed from #4b5563 */
     padding: 1.5rem;
     background: white;
@@ -120,6 +126,8 @@ body, html {
 }
 
 .info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-color: rgb(76, 76, 74); /* Keep same color on hover */
@@ -141,44 +149,27 @@ body, html {
   .info-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .hero h1 {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 1.1rem;
   }
-  
-  @media (max-width: 768px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-  }
-  
-  .subtitle {
-    font-size: 1.1rem;
-  }
-  
+
   .cta {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    padding: 0 1rem; /* Add this line - prevents edge overflow */
   }
-  
+
   .btn {
-    width: 100%; /* Change from auto to 100% */
-    max-width: 280px; /* Change from min-width to max-width */
+    width: 100%;
+    max-width: 300px;
     text-align: center;
-    padding: 0.75rem 1rem; /* Reduce padding from 2rem to 1rem */
-    box-sizing: border-box; /* Add this line - crucial for width calculation */
   }
 }
-  
+
 /* SMR Chart */
 .smr-chart-section {
   padding: 4rem 0;
@@ -365,6 +356,7 @@ html {
     border-radius: 12px;
     padding: 3rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
     border: 1px solid rgb(76, 76, 74); /* Match the info-card border color */
     text-align: center;
     position: relative;
@@ -376,6 +368,7 @@ html {
     color: #111827;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
+    border-bottom: 2px solid #3b82f6;
     border-bottom: 2px solid rgb(55, 65, 247); /* Match close button color */
     display: inline-block;
 }
@@ -395,16 +388,22 @@ html {
 .close-explanation {
     display: inline-block;
     padding: 0.75rem 1.5rem;
+    background: #f3f4f6;
+    color: #4b5563;
     background: rgb(55, 65, 247); /* New blue color */
     color: white; /* Changed from #4b5563 to white for better contrast */
     text-decoration: none;
     border-radius: 6px;
     font-weight: 500;
     transition: all 0.3s;
+    border: 1px solid #d1d5db;
+    margin-top: 1rem;
     border: 1px solid rgb(55, 65, 247); /* Match border to background */
 }
 
 .close-explanation:hover {
+    background: #e5e7eb;
+    color: #111827;
     background: rgb(45, 55, 220); /* Darker blue for hover */
     color: white;
     transform: translateY(-2px);
@@ -429,6 +428,7 @@ html {
     bottom: 12px;
     right: 12px;
     font-size: 0.9rem;
+    color: #3b82f6;
     color: rgb(55, 65, 247); /* Match close button color */
     text-decoration: none;
     font-weight: 500;
@@ -438,6 +438,8 @@ html {
 }
 
 .more:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
     background: rgba(55, 65, 247, 0.1); /* Light blue background on hover */
     color: rgb(45, 55, 220); /* Darker blue on hover */
     text-decoration: underline;
@@ -448,23 +450,23 @@ html {
     .explanatory-cards-container {
         padding: 0 1rem;
     }
-    
+
     .explanation-card-content {
         padding: 2rem;
     }
-    
+
     .explanation-card-content h3 {
         font-size: 1.5rem;
     }
-    
+
     .explanation-card-content p {
         font-size: 1rem;
     }
-    
+
     .default-state {
         padding: 3rem 1.5rem;
     }
-    
+
     .default-state h3 {
         font-size: 1.5rem;
     }
@@ -474,9 +476,7 @@ html {
     .explanation-card-content {
         padding: 1.5rem;
     }
-    
+
     .default-state {
         padding: 2rem 1rem;
     }
-}
-
