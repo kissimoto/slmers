@@ -68,20 +68,21 @@ body, html {
 }
 
 .btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: rgb(16, 185, 29); /* New RGB color */
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s;
-    border: 2px solid rgb(16, 185, 29);
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgb(16, 185, 29);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 2px solid rgb(16, 185, 29);
+  box-sizing: border-box;
 }
 
 .btn:hover {
-    background: rgb(13, 150, 23); /* Darker shade for hover */
-    transform: translateY(-2px);
+  background: rgb(13, 150, 23);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -94,7 +95,25 @@ body, html {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Info Grid */
+/* SLM Intro Section */
+.slm-intro {
+  padding: 3rem 0;
+  text-align: center;
+  background: white;
+}
+
+.slm-intro h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.slm-intro p {
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  color: #4b5563;
+}
+
+/* Info Grid Section */
 .info-grid-section {
   padding: 4rem 0;
   background: #f9fafb;
@@ -107,30 +126,22 @@ body, html {
 }
 
 .info-card {
-  border: 3px solid #4b5563;
+  border: 3px solid rgb(76, 76, 74);
   padding: 1.5rem;
   background: white;
   border-radius: 6px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-    border: 3px solid rgb(76, 76, 74); /* Changed from #4b5563 */
-    padding: 1.5rem;
-    background: white;
-    border-radius: 6px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .info-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border-color: rgb(76, 76, 74); /* Keep same color on hover */
+  border-color: rgb(76, 76, 74);
 }
 
 .info-card h3 {
@@ -139,46 +150,53 @@ body, html {
   font-size: 1.25rem;
 }
 
+.info-card p {
+  flex-grow: 1;
+  margin-bottom: 2.5rem;
+  color: #4b5563;
+}
+
+.more {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 0.9rem;
+  color: rgb(55, 65, 247);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.more:hover {
+  background: rgba(55, 65, 247, 0.1);
+  color: rgb(45, 55, 220);
+  text-decoration: underline;
+}
+
 .info-card.empty {
   background: transparent;
   border: 3px dashed #d1d5db;
-  visibility: hidden; /* or remove this line if you want placeholder visible */
+  visibility: hidden;
 }
 
-@media (max-width: 768px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-  }
-
-  .cta {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
-  }
-}
-
-/* SMR Chart */
+/* SMR Chart Section */
 .smr-chart-section {
   padding: 4rem 0;
   text-align: center;
+  background: white;
 }
 
 .smr-chart-section h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
+}
+
+.smr-chart-section p {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: #4b5563;
 }
 
 .smr-chart {
@@ -189,294 +207,245 @@ body, html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Principles */
-.principles-section {
-  padding: 4rem 0;
-  background: white;
-  text-align: center;
-}
-
-.principles-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.principles-list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 0;
-  margin-top: 2rem;
-}
-
-.principles-list li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 250px;
-  text-align: center;
-  padding: 1rem;
-}
-
-.campfire-icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.75rem;
-}
-.slm-intro {
-  padding: 3rem 0;
-  text-align: center;
-  background: white;
-}
-.slm-intro h2 {
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-.details-section {
-  padding: 3rem 0;
-  background: #f3f4f6;
-}
-
-.detail-box {
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.back-to-top {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #2563eb;
-  text-decoration: none;
-}
-html {
-  scroll-behavior: smooth;
-}
-.info-card {
-  position: relative;
-  /* existing styles */
-}
-
-.more {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  font-size: 0.8rem;
-  color: #6b7280;
-  text-decoration: underline;
-  opacity: 0.7;
-}
-
-/* Add to your existing CSS */
-
 /* Explanatory Cards Section */
 .explanatory-cards-section {
-    padding: 4rem 0;
-    background: #f3f4f6;
-    min-height: 500px;
+  padding: 4rem 0;
+  background: #f3f4f6;
+  min-height: 500px;
 }
 
 .explanatory-cards-container {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Default State */
 .default-state {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.5s ease;
-    opacity: 1;
-    visibility: visible;
-    position: relative;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+  position: relative;
 }
 
 .default-state h3 {
-    font-size: 2rem;
-    color: #111827;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 1rem;
 }
 
 .default-state p {
-    font-size: 1.1rem;
-    color: #6b7280;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto 2rem;
 }
 
 .default-icon {
-    font-size: 3rem;
-    margin-top: 1rem;
-    opacity: 0.3;
+  font-size: 3rem;
+  margin-top: 1rem;
+  opacity: 0.3;
 }
 
 /* Explanation Cards */
 .explanation-card {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
 .explanation-card.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    z-index: 2;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  z-index: 2;
 }
 
 .default-state.active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .default-state:not(.active),
 .explanation-card:not(.active) {
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
-/* Optional: Update the explanation card border to match */
 .explanation-card-content {
-    background: white;
-    border-radius: 12px;
-    padding: 3rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
-    border: 1px solid rgb(76, 76, 74); /* Match the info-card border color */
-    text-align: center;
-    position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(76, 76, 74);
+  text-align: center;
+  position: relative;
 }
 
-/* Update the h3 border in explanation cards to match the blue theme */
 .explanation-card-content h3 {
-    font-size: 1.8rem;
-    color: #111827;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #3b82f6;
-    border-bottom: 2px solid rgb(55, 65, 247); /* Match close button color */
-    display: inline-block;
+  font-size: 1.8rem;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgb(55, 65, 247);
+  display: inline-block;
 }
 
 .explanation-card-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #4b5563;
-    margin-bottom: 1.5rem;
-    text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .explanation-card-content p:last-child {
-    margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .close-explanation {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #f3f4f6;
-    color: #4b5563;
-    background: rgb(55, 65, 247); /* New blue color */
-    color: white; /* Changed from #4b5563 to white for better contrast */
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: all 0.3s;
-    border: 1px solid #d1d5db;
-    margin-top: 1rem;
-    border: 1px solid rgb(55, 65, 247); /* Match border to background */
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgb(55, 65, 247);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: 1px solid rgb(55, 65, 247);
+  margin-top: 1rem;
 }
 
 .close-explanation:hover {
-    background: #e5e7eb;
-    color: #111827;
-    background: rgb(45, 55, 220); /* Darker blue for hover */
-    color: white;
-    transform: translateY(-2px);
-    border-color: rgb(45, 55, 220);
+  background: rgb(45, 55, 220);
+  color: white;
+  transform: translateY(-2px);
+  border-color: rgb(45, 55, 220);
 }
 
-/* Info Card "more" link updates */
-.info-card {
-    position: relative;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
 }
 
-.info-card p {
-    flex-grow: 1;
-    margin-bottom: 2.5rem;
-}
-
-.more {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    font-size: 0.9rem;
-    color: #3b82f6;
-    color: rgb(55, 65, 247); /* Match close button color */
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    transition: all 0.3s;
-}
-
-.more:hover {
-    background: #eff6ff;
-    color: #1d4ed8;
-    background: rgba(55, 65, 247, 0.1); /* Light blue background on hover */
-    color: rgb(45, 55, 220); /* Darker blue on hover */
-    text-decoration: underline;
-}
-
-/* Responsive Design for Explanatory Cards */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .explanatory-cards-container {
-        padding: 0 1rem;
-    }
-
-    .explanation-card-content {
-        padding: 2rem;
-    }
-
-    .explanation-card-content h3 {
-        font-size: 1.5rem;
-    }
-
-    .explanation-card-content p {
-        font-size: 1rem;
-    }
-
-    .default-state {
-        padding: 3rem 1.5rem;
-    }
-
-    .default-state h3 {
-        font-size: 1.5rem;
-    }
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .cta {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+  }
+  
+  .explanatory-cards-container {
+    padding: 0 1rem;
+  }
+  
+  .explanation-card-content {
+    padding: 2rem;
+  }
+  
+  .explanation-card-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .explanation-card-content p {
+    font-size: 1rem;
+  }
+  
+  .default-state {
+    padding: 3rem 1.5rem;
+  }
+  
+  .default-state h3 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .explanation-card-content {
-        padding: 1.5rem;
-    }
+  .hero {
+    padding: 4rem 0;
+  }
+  
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .manifesto {
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+  
+  .cta {
+    padding: 0 0.5rem;
+  }
+  
+  .btn {
+    max-width: 100%;
+    padding: 0.75rem 0.75rem;
+    font-size: 0.95rem;
+  }
+  
+  .explanation-card-content {
+    padding: 1.5rem;
+  }
+  
+  .default-state {
+    padding: 2rem 1rem;
+  }
+}
 
-    .default-state {
-        padding: 2rem 1rem;
-    }
+@media (max-width: 375px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
