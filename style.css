@@ -472,3 +472,16 @@ html {
   font-size: 1.1rem;
   color: #374151;
 }
+
+.use-case-section {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+.use-case-section h2 {
+  margin-top: 0;
+  color: #111827;
+}
