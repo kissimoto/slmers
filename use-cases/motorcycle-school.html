@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Motorcycle School | Kiwacht-Edge Use Case</title>
   <link rel="stylesheet" href="../style.css" />
+  <script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'default' });
+</script>
 </head>
 <body>
 
   <header class="hero">
     <div class="container">
-      <h1>Eliminating £8 Mistakes in UK Motorcycle Training</h1>
+      <h1>Eliminating Paper Trail Errors in UK Motorcycle Training</h1>
       <p>How Kiwacht-Edge saves Motorcycle schools from voided certificates, manual errors, and wasted hours</p>
     </div>
   </header>
@@ -39,45 +43,17 @@
 
     <h2>The Kiwacht-Edge Workflow</h2>
 
-<!-- Logical Workflow Diagram -->
-<div style="text-align: center; margin: 2rem 0;">
-  <svg width="100%" height="220" viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="max-width:700px; margin:0 auto;">
-    <!-- Instructor (Circle) -->
-    <circle cx="100" cy="110" r="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-    <text x="100" y="115" text-anchor="middle" font-size="12" fill="#1e40af">Instructor</text>
-    
-    <!-- Kiwacht-Edge PWA (Smartphone icon as square) -->
-    <rect x="220" y="80" width="60" height="60" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
-    <rect x="230" y="90" width="40" height="40" rx="5" fill="white" stroke="#6b7280"/>
-    <circle cx="250" cy="100" r="3" fill="#ef4444"/>
-    <text x="250" y="125" text-anchor="middle" font-size="10" fill="#4b5563">PWA</text>
-    
-    <!-- On-Prem Hub (Server icon) -->
-    <rect x="350" y="70" width="100" height="80" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
-    <rect x="360" y="80" width="80" height="15" rx="3" fill="#e5e7eb"/>
-    <rect x="360" y="100" width="80" height="15" rx="3" fill="#e5e7eb"/>
-    <rect x="360" y="120" width="80" height="15" rx="3" fill="#e5e7eb"/>
-    <text x="400" y="155" text-anchor="middle" font-size="10" fill="#4b5563">On-Prem Hub</text>
-    
-    <!-- DVSA (Cloud icon) -->
-    <path d="M580 110 Q600 95 620 110 Q600 125 580 110 Z" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
-    <text x="600" y="115" text-anchor="middle" font-size="12" fill="#4b5563">DVSA</text>
-    
-    <!-- Arrows -->
-    <line x1="130" y1="110" x2="220" y2="110" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
-    <line x1="280" y1="110" x2="350" y2="110" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
-    <line x1="450" y1="110" x2="580" y2="110" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrow)"/>
-    
-    <!-- Arrowhead definition -->
-    <defs>
-      <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-        <path d="M0,0 L0,6 L9,3 z" fill="#6b7280" />
-      </marker>
-    </defs>
-  </svg>
-  <p style="font-size: 0.9rem; color: #6b7280; margin-top: 1rem;">
-    <em>Instructor → Kiwacht-Edge PWA → On-prem hub → DVSA. No cloud. No data leakage.</em>
-  </p>
+<div class="mermaid" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+graph LR
+  A[Instructor completes paper cert] --> B[Opens Kiwacht PWA on phone]
+  B --> C{Enters data:<br>- Driver #<br>- Duration<br>- Vehicle type}
+  C --> D[Kiwacht-Edge SLM:<br>• Parses input<br>• Applies DVSA rules<br>• Converts 4h12m → 4.25]
+  D --> E[Data encrypted + queued locally]
+  E --> F{When online,<br>syncs to school hub}
+  F --> G[School hub:<br>• Collates all certs<br>• Auto-increments #<br>• Generates DVSA CSV]
+  G --> H[Owner reviews → approves]
+  H --> I[Export → submit to DVSA]
+  I --> J[All data erased<br><em>amnesia by design</em>]
 </div>
     <ol>
       <li><strong>Instructor or admin opens Kiwacht-Edge PWA</strong> on any smartphone (iOS/Android)</li>
@@ -99,16 +75,17 @@
       <li><strong>Data sent securely to school’s on-prem hub</strong> (a £500 PC in the office)</li>
       <li><strong>Hub collates all 25 certs</strong>, generates DVSA-compliant csv file</li>
       <li><strong>Owner reviews → approves → exports</strong></li>
-      <li><strong>All data erased</strong> — ephemeral by design</li>
+      <li><strong>All data erased</strong> — ephemeral by design
+      <p>“Kiwacht-Edge enforces amnesia by design — data is erased after DVSA submission. 
+        However, schools may optionally retain anonymised records locally for internal audit, fully under their control.”</p></li>
     </ol>
 
     <h2>Why This Matters for Europe</h2>
-    <p>This isn’t just about one particular workflow issue of a motorcycle training school. It’s about fixing small workflows for<strong> 99% of European businesses</strong>:</p>
+    <p>This isn’t just about a motorcycle training school, but about fixing small workflows for<strong> 99% of European businesses</strong>:</p>
     <ul>
       <li><strong>Niche but real</strong>: ~500 ATBs, ~2,000 instructors in the UK alone</li>
       <li><strong>Regulated & high-stakes</strong>: DVSA compliance is non-negotiable</li>
       <li><strong>Sovereign by necessity</strong>: No cloud AI can handle paper-to-digital conversion with zero data leakage</li>
-      <li><strong>Scalable pattern</strong>: Same architecture works for driving schools, HGV trainers, etc.</li>
     </ul>
 
     <p><strong>Outcome</strong>: 12 hours saved/month. £1,200/year recovered. Zero voids.</p>
