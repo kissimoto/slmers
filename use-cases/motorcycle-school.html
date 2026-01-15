@@ -33,19 +33,18 @@
     <ul>
       <li>The DVSA, UK's Driver and Vehicle Standards Agency, sells <strong>books of 25 paper certificates</strong> to Approved Training Bodies (ATBs)</li>
       <li>After each successful CBT (compulsory basic training), the instructor fills out <strong>a certificate by hand</strong></li>
-      <li>Staff then <strong>manually retype all 25 certs into Excel</strong> for DVSA submission</li>
+      <li>Office staff then <strong>manually retype all 25 certs into Excel</strong> for DVSA submission</li>
       <li><strong>One typo = voided certificate = £8 loss</strong></li>
-      <li>For a small school of three instructors <strong>3 voids per 20 clients = £1200/year lost</strong></li>
-      <li>Plus <strong>three hours of admin per weekend</strong></li>
+      <li>For a small school of three instructors <strong>three voids per 20 clients = £1200/year lost</strong></li>
+      <li>Plus <strong>three hours of admin</strong></li>
     </ul>
 
-    <h2>One of the Quirky DVSA Rules</h2>
+    <h2>One of the Quirky DVSA Rules when Submitting a Certificate</h2>
     <p>Duration must be entered in decimal hours by the instructor on the day, but not how you’d expect:</p>
     <ul>
       <li>1 hour = <code>1.00</code></li>
       <li>15 minutes = <code>0.25</code></li>
-      <li>30 minutes = <code>0.50</code></li>
-      <li>45 minutes = <code>0.75 and so on</code></li>
+      <li>30 minutes = <code>0.50 and so on</code></li>
     </ul>
     <p>Get this wrong? Certificate voided.</p>
 
@@ -74,7 +73,7 @@
 <div class="workflow-step">
   <h4>2. Enters the required DVSA fields:</h4>
   <ul>
-    <li>ATB Number</li>
+    <li>Location Number</li>
     <li>Certificate Number (auto-incremented: 1–25)</li>
     <li>Course Duration (e.g., “4h 12m”)</li>
     <li>Driver Number (9-char DVLA ID) and so on</li>
@@ -86,7 +85,7 @@
   <ul>
     <li>Converts “4h 12m” → <code>4.25</code></li>
     <li>Validates driver number format</li>
-    <li>Prevents duplicate cert numbers</li>
+    <li>Prevents inputting wrong certificate numbers</li>
   </ul>
 </div>
 
@@ -95,7 +94,7 @@
 </div>
 
 <div class="workflow-step">
-  <h4>5. Hub collates all 25 certs, generates DVSA-compliant CSV file</h4>
+  <h4>5. Hub collates all 25 certificates, generates DVSA-compliant csv file</h4>
 </div>
 
 <div class="workflow-step">
