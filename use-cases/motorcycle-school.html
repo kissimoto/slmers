@@ -6,10 +6,18 @@
   <title>Motorcycle School | Kiwacht-Edge Use Case</title>
   <link rel="stylesheet" href="../style.css" />
   <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true, theme: 'default' });
-</script>
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ 
+      startOnLoad: true, 
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: false,
+        curve: 'basis'
+      }
+    });
+  </script>
 </head>
+  
 <body>
 
   <header class="hero">
@@ -43,8 +51,8 @@
 
     <h2>The Kiwacht-Edge Workflow</h2>
 
-<div class="mermaid" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
-graph LR
+<div class="mermaid" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
+graph TD
   A[Instructor completes paper cert] --> B[Opens Kiwacht PWA on phone]
   B --> C{Enters data:<br>- Driver #<br>- Duration<br>- Vehicle type}
   C --> D[Kiwacht-Edge SLM:<br>• Parses input<br>• Applies DVSA rules<br>• Converts 4h12m → 4.25]
@@ -55,30 +63,48 @@ graph LR
   H --> I[Export → submit to DVSA]
   I --> J[All data erased<br><em>amnesia by design</em>]
 </div>
-    <ol>
-      <li><strong>Instructor or admin opens Kiwacht-Edge PWA</strong> on any smartphone (iOS/Android)</li>
-      <li><strong>Enters the required DVSA fields</strong>:
-        <ul>
-          <li>ATB Number</li>
-          <li>Certificate Number (auto-incremented: 1–25)</li>
-          <li>Course Duration (e.g., “4h 12m”)</li>
-          <li>Driver Number (9-char DVLA ID) and so on</li>
-        </ul>
-      </li>
-      <li><strong>Kiwacht-Edge applies DVSA rules</strong>:
-        <ul>
-          <li>Converts “4h 12m” → <code>4.15</code></li>
-          <li>Validates driver number format</li>
-          <li>Prevents duplicate cert numbers</li>
-        </ul>
-      </li>
-      <li><strong>Data sent securely to school’s on-prem hub</strong> (a £500 PC in the office)</li>
-      <li><strong>Hub collates all 25 certs</strong>, generates DVSA-compliant csv file</li>
-      <li><strong>Owner reviews → approves → exports</strong></li>
-      <li><strong>All data erased</strong> — ephemeral by design
-      <p>“Kiwacht-Edge enforces amnesia by design — data is erased after DVSA submission. 
-        However, schools may optionally retain anonymised records locally for internal audit, fully under their control.”</p></li>
-    </ol>
+<div class="workflow-step">
+  <h4>1. Instructor or admin opens Kiwacht-Edge PWA on any smartphone (iOS/Android)</h4>
+</div>
+
+<div class="workflow-step">
+  <h4>2. Enters the required DVSA fields:</h4>
+  <ul>
+    <li>ATB Number</li>
+    <li>Certificate Number (auto-incremented: 1–25)</li>
+    <li>Course Duration (e.g., “4h 12m”)</li>
+    <li>Driver Number (9-char DVLA ID) and so on</li>
+  </ul>
+</div>
+
+<div class="workflow-step">
+  <h4>3. Kiwacht-Edge applies DVSA rules:</h4>
+  <ul>
+    <li>Converts “4h 12m” → <code>4.25</code></li>
+    <li>Validates driver number format</li>
+    <li>Prevents duplicate cert numbers</li>
+  </ul>
+</div>
+
+<div class="workflow-step">
+  <h4>4. Data sent securely to school’s on-prem hub (a £500 PC in the office)</h4>
+</div>
+
+<div class="workflow-step">
+  <h4>5. Hub collates all 25 certs, generates DVSA-compliant CSV file</h4>
+</div>
+
+<div class="workflow-step">
+  <h4>6. Owner reviews → approves → exports</h4>
+</div>
+
+<div class="workflow-step">
+  <h4>7. All data erased — ephemeral by design</h4>
+  <p style="margin-top: 0.75rem; font-style: italic; color: #4b5563;">
+    “Kiwacht-Edge enforces amnesia by design — data is erased after DVSA submission. 
+    However, schools may optionally retain anonymised records locally for internal audit, fully under their control.”
+  </p>
+</div>
     
   <div class="use-case-section">
     <h2>Why This Matters for Europe</h2>
