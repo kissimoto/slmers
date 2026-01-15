@@ -527,3 +527,9 @@ html {
   margin: 0.5rem 0 0;
   padding-left: 1.25rem;
 }
+
+.use-case-page h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
