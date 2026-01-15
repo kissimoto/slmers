@@ -485,6 +485,29 @@ html {
   margin-top: 0;
   color: #111827;
 }
+
+.use-case-page .container {
+  text-align: center;
+}
+
+.use-case-page h2,
+.use-case-page p,
+.use-case-page ul,
+.use-case-page ol {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+.use-case-page .mermaid,
+.use-case-page .workflow-step {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
 .workflow-step {
   background: #f8fafc;
   border-left: 4px solid #3b82f6;
