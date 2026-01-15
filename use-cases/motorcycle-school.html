@@ -51,18 +51,22 @@
 
     <h2>The Kiwacht-Edge Workflow</h2>
 
-  <div class="mermaid" style="background: #f9fafb; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
-graph TD
-  A[Instructor completes paper cert] --> B[Opens Kiwacht PWA on phone]
-  B --> C{Enters data:<br>- Driver #<br>- Duration<br>- Vehicle type}
-  C --> D[Kiwacht-Edge SLM:<br>• Parses input<br>• Applies DVSA rules<br>• Converts 4h12m → 4.25]
-  D --> E[Data encrypted + queued locally]
-  E --> F{When online,<br>syncs to school hub}
-  F --> G[School hub:<br>• Collates all certs<br>• Auto-increments #<br>• Generates DVSA CSV]
-  G --> H[Owner reviews → approves]
-  H --> I[Export → submit to DVSA]
-  I --> J[All data erased<br><em>amnesia by design</em>]
+<div style="display: flex; justify-content: center; margin: 2rem 0;">
+  <div class="mermaid" style="max-width: 700px; background: #f9fafb; padding: 1.5rem; border-radius: 8px;">
+    graph TD
+      A[Instructor completes paper cert] --> B[Opens Kiwacht PWA on phone]
+      B --> C{Enters <br>- Driver #<br>- Duration<br>- Vehicle type}
+      C --> D[Kiwacht-Edge SLM:<br>• Parses input<br>• Applies DVSA rules<br>• Converts 4h12m → 4.25]
+      D --> E[Data encrypted + queued locally]
+      E --> F{When online,<br>syncs to school hub}
+      F --> G[School hub:<br>• Collates all certs<br>• Auto-increments #<br>• Generates DVSA CSV]
+      G --> H[Owner reviews → approves]
+      H --> I[Export → submit to DVSA]
+      I --> J[All data erased<br><em>amnesia by design</em>]
+  </div>
 </div>
+
+    
 <div class="workflow-step">
   <h4>1. Instructor or admin opens Kiwacht-Edge PWA on any smartphone (iOS/Android)</h4>
 </div>
