@@ -81,27 +81,23 @@
 </div>
     <ol>
       <li><strong>Instructor or admin opens Kiwacht-Edge PWA</strong> on any smartphone (iOS/Android)</li>
-      <li><strong>Enters the 8 DVSA fields</strong>:
+      <li><strong>Enters the required DVSA fields</strong>:
         <ul>
           <li>ATB Number</li>
           <li>Certificate Number (auto-incremented: 1–25)</li>
-          <li>Completion Time</li>
           <li>Course Duration (e.g., “4h 12m”)</li>
-          <li>Driver Number (9-char DVLA ID)</li>
-          <li>Instructor Certificate</li>
-          <li>Restriction Duplicate</li>
-          <li>Transmission ATB Number</li>
+          <li>Driver Number (9-char DVLA ID) and so on</li>
         </ul>
       </li>
       <li><strong>Kiwacht-Edge applies DVSA rules</strong>:
         <ul>
-          <li>Converts “4h 12m” → <code>4.25</code></li>
+          <li>Converts “4h 12m” → <code>4.15</code></li>
           <li>Validates driver number format</li>
           <li>Prevents duplicate cert numbers</li>
         </ul>
       </li>
-      <li><strong>Data sent securely to school’s on-prem hub</strong> (a €200 PC in the office)</li>
-      <li><strong>Hub collates all 25 certs</strong>, generates DVSA-compliant CSV</li>
+      <li><strong>Data sent securely to school’s on-prem hub</strong> (a £500 PC in the office)</li>
+      <li><strong>Hub collates all 25 certs</strong>, generates DVSA-compliant csv file</li>
       <li><strong>Owner reviews → approves → exports</strong></li>
       <li><strong>All data erased</strong> — ephemeral by design</li>
     </ol>
@@ -109,10 +105,10 @@
     <h2>Why This Matters for Europe</h2>
     <p>This isn’t just about one particular workflow issue of a motorcycle training school. It’s about fixing small workflows for<strong> 99% of European businesses</strong>:</p>
     <ul>
-      <li>✅ <strong>Niche but real</strong>: ~500 ATBs, ~2,000 instructors in the UK alone</li>
-      <li>✅ <strong>Regulated & high-stakes</strong>: DVSA compliance is non-negotiable</li>
-      <li>✅ <strong>Sovereign by necessity</strong>: No cloud AI can handle paper-to-digital conversion with zero data leakage</li>
-      <li>✅ <strong>Scalable pattern</strong>: Same architecture works for driving schools, HGV trainers, etc.</li>
+      <li><strong>Niche but real</strong>: ~500 ATBs, ~2,000 instructors in the UK alone</li>
+      <li><strong>Regulated & high-stakes</strong>: DVSA compliance is non-negotiable</li>
+      <li><strong>Sovereign by necessity</strong>: No cloud AI can handle paper-to-digital conversion with zero data leakage</li>
+      <li><strong>Scalable pattern</strong>: Same architecture works for driving schools, HGV trainers, etc.</li>
     </ul>
 
     <p><strong>Outcome</strong>: 12 hours saved/month. £1,200/year recovered. Zero voids.</p>
