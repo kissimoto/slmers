@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Motorcycle School | Kiwacht-Edge Use Case</title>
   <link rel="stylesheet" href="../style.css" />
 </head>
@@ -9,48 +10,66 @@
 
   <header class="hero">
     <div class="container">
-      <h1>Eliminating £8 Mistakes</h1>
-      <p>How Kiwacht-Edge saves UK motorcycle schools from voided DVSA certificates</p>
+      <h1>Eliminating Paper Trails in UK Motorcycle Training</h1>
+      <p>How Kiwacht-Edge saves ATBs from voided DVSA certificates, manual errors, and wasted hours</p>
     </div>
   </header>
 
   <section class="container" style="padding: 3rem 0;">
-    <h2>The Workflow</h2>
-    <p>Every UK motorcycle training school uses paper DVSA certificates with <strong>8 mandatory fields</strong>:</p>
-    
+    <h2>The Pain Point</h2>
+    <p>UK motorcycle training schools (ATBs) face a paper-based workflow when issuing certificates:</p>
+    <ul>
+      <li>DVSA sells <strong>books of 25 paper certificates</strong> to Approved Training Bodies (ATBs)</li>
+      <li>After each successful CBT, the instructor fills out <strong>the certificate by hand</strong></li>
+      <li>Staff then <strong>manually retype all 25 certs into Excel</strong> for DVSA submission</li>
+      <li><strong>One typo = voided certificate = £8 loss</strong></li>
+      <li>For a small school: <strong>3 voids per 20 clients and 12 hours of retyping work = £1200/year lost</strong></li>
+    </ul>
+
+    <h2>Some of the Quirky DVSA Rules</h2>
+    <p>Duration must be entered in decimal hours — but not how you’d expect:</p>
+    <ul>
+      <li>1 hour = <code>1.00</code></li>
+      <li>15 minutes = <code>0.25</code></li>
+      <li>30 minutes = <code>0.50 and so on</code></li>
+    </ul>
+    <p>Get this wrong? Certificate voided.</p>
+
+    <h2>The Kiwacht-Edge Workflow</h2>
     <ol>
-      <li><strong>ATB Number</strong> – Training centre ID</li>
-      <li><strong>Certificate Number</strong> – From the book (1–25)</li>
-      <li><strong>Completion Time</strong> – Hour of finish (e.g., 14:30)</li>
-      <li><strong>Course Duration</strong> – In DVSA decimal hours:
+      <li><strong>Instructor or admin opens Kiwacht-Edge PWA</strong> on any smartphone (iOS/Android)</li>
+      <li><strong>Enters the required DVSA fields such as</strong>:
         <ul>
-          <li>5 minutes = <code>0.08</code></li>
-          <li>15 minutes = <code>0.25</code></li>
-          <li>4h 15m = <code>4.25</code></li>
+          <li>ATB Number</li>
+          <li>Certificate Number (auto-incremented: 1–25)</li>
+          <li>Completion Time</li>
+          <li>Course Duration (e.g., “4h 12m”)</li>
+          <li>Driver Number (9-char DVLA ID)</li>
+          <li>Instructor Certificate and more</li>
         </ul>
       </li>
-      <li><strong>Driver Number</strong> – 9-character DVLA ID (e.g., SMITH98765)</li>
-      <li><strong>Instructor Certificate</strong> – Instructor’s own ID</li>
-      <li><strong>Restriction Duplicate</strong> – Original cert # if retaking</li>
-      <li><strong>Transmission ATB Number</strong> – Auto / Manual / Void</li>
+      <li><strong>Kiwacht-Edge applies DVSA rules</strong>:
+        <ul>
+          <li>Converts “4h 12m” → <code>4.25</code></li>
+          <li>Validates driver number format</li>
+          <li>Prevents duplicate cert numbers</li>
+        </ul>
+      </li>
+      <li><strong>Data sent securely to training school’s on-prem hub</strong> (a €500 PC in the office)</li>
+      <li><strong>Hub collates all 25 certs</strong>, generates DVSA-compliant CSV</li>
+      <li><strong>Owner reviews → approves → exports</strong></li>
+      <li><strong>All data that is sent to the DVSA is erased</strong> - amnesia by design</li>
     </ol>
 
-    <h2>The Cost of Errors</h2>
-    <p>Staff manually retype these into Excel for DVSA submission. One typo — especially in the driver number or duration — voids the certificate. <strong>Cost: £8 per error.</strong></p>
-    <p>For a school issuing 500 certs/month, even a 2% error rate = <strong>£800/month lost</strong>.</p>
-
-    <h2>How Kiwacht-Edge Fixes This</h2>
-    <p>A sovereign, offline-first system that enforces DVSA rules at the point of entry:</p>
-    
+    <h2>Why This Matters for the UK</h2>
+    <p>This isn’t just about motorcycles. It’s about <strong> finding niche solutions for 99% of European businesses</strong>:</p>
     <ul>
-      <li>✅ <strong>Instructor or admin enters data</strong> via PWA on any smartphone</li>
-      <li>✅ <strong>SLM + rules validate input</strong> (e.g., “4h15m” → 4.25)</li>
-      <li>✅ <strong>Auto-increments cert #</strong> (1–25, no duplicates)</li>
-      <li>✅ <strong>Data sent to on-prem hub</strong> (€200 PC in the office)</li>
-      <li>✅ <strong>Hub generates DVSA-compliant CSV</strong></li>
-      <li>✅ <strong>Human approves before export</strong></li>
-      <li>✅ <strong>All data erased after submission</strong> — ephemeral by design</li>
+      <li>✅ <strong>Niche but real</strong>: ~500 ATBs, ~2,000 instructors in the UK alone</li>
+      <li>✅ <strong>Regulated & high-stakes</strong>: DVSA compliance is non-negotiable</li>
+      <li>✅ <strong>Sovereign by necessity</strong>: No cloud AI can handle paper-to-digital conversion with zero data leakage</li>
     </ul>
+
+    <p><strong>Outcome</strong>: 12 hours saved/month plus £1,200/year recovered. Zero voids.</p>
 
     <div style="text-align: center; margin-top: 2rem;">
       <a href="/use-cases.html" class="btn btn-outline">← Back to all use cases</a>
