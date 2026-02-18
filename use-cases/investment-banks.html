@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investment Banks – Sovereign Compliance with Kiwacht-Edge</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #1e293b; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+    h1, h2, h3 { color: #0f172a; }
+    .warning { background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; margin: 1.5rem 0; }
+    .safe { background: #f0fdf4; border-left: 4px solid #10b981; padding: 1rem; margin: 1.5rem 0; }
+    code { background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; }
+    pre { background: #f8fafc; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+  </style>
+</head>
+<body>
 
+<h1>Investment Banks: Sovereign Compliance Without Cloud Risk</h1>
+
+<p>Global banks face a growing dilemma: Microsoft’s AI tools promise productivity — but at the cost of data sovereignty, regulatory compliance, and operational resilience.</p>
+
+<div class="warning">
+  <strong>⚠️ The Copilot Problem:</strong> Even when used inside Outlook, Microsoft Copilot sends your emails, attachments, and prompts to Azure for processing. According to Microsoft’s documentation, this data is used to “provide context” and may be retained for model improvement — unless explicitly opted out. In practice, this means sensitive trading strategies, client names, and internal discussions leave your perimeter, violating GDPR, DORA, and MiFID II.
+</div>
+
+<div class="warning">
+  <strong>⚠️ The Outlook Risk:</strong> Microsoft has already begun sunsetting legacy protocols and restricting third-party access. In 2023, it disabled basic auth for millions of tenants overnight. There is no guarantee Outlook will remain accessible — or compliant — in a post-Schrems II world.
+</div>
+
+<h2>A Safer Path: Sovereign Email + Central Gatekeeping</h2>
+
+<p>We recommend a two-part strategy:</p>
+
+<ol>
+  <li><strong>Switch to a sovereign email provider</strong> like <a href="https://www.zoho.com/mail/" target="_blank">Zoho Mail</a> (EU-hosted, GDPR-compliant, IMAP/SMTP enabled)</li>
+  <li><strong>Deploy Kiwacht-Edge as a Central Compliance Gatekeeper</strong> that automatically scans all outbound communications</li>
+</ol>
+
+<div class="safe">
+  <strong>✅ Why this works:</strong> Zoho keeps your email in Europe. Kiwacht-Edge ensures every message complies with internal rules — without relying on Microsoft’s cloud or risking sudden service changes.
+</div>
+
+<h2>The Only Viable Approach: Network-Level Email Interception</h2>
+
+<p>Relying on traders to “drag emails into folders” fails. Compliance must be automatic, systematic, and invisible.</p>
+
+<h3>How It Works – Step by Step</h3>
+
+<ol>
+  <li>
+    <strong>Configure Email Journaling</strong><br>
+    In your mail server (e.g., Zoho Mail, on-prem Exchange), enable <strong>journaling</strong> to copy all outbound messages to a secure local folder:<br>
+    <code>/kiwacht-edge/inbound/journal/</code>
+  </li>
+
+  <li>
+    <strong>Deploy Kiwacht-Edge Appliance</strong><br>
+    Run Kiwacht-Edge on a dedicated machine (Intel N100 or better) in your London/NY/Frankfurt office. It watches the journal folder continuously.
+  </li>
+
+  <li>
+    <strong>Define Your Rules</strong><br>
+    Create <code>compliance_rules.json</code>:
+    <pre>{
+  "cross_border_eu": {
+    "if_recipient_domain_in": ["@bank.eu", "@client.de"],
+    "actions": ["redact_pii", "strip_exif", "add_watermark: 'INTERNAL-EU'"]
+  },
+  "market_abuse": {
+    "keywords": ["insider", "non-public", "front-run", "off-book"],
+    "actions": ["quarantine", "alert_compliance_officer"]
+  }
+}</pre>
+  </li>
+
+  <li>
+    <strong>Automatic Enforcement</strong><br>
+    For every email:
+    <ul>
+      <li>If sent to EU → auto-redact client names, strip metadata, add footer</li>
+      <li>If contains “insider” → hold in quarantine, notify compliance lead</li>
+      <li>If clean → release to original outbound queue</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Audit & Oversight</strong><br>
+    All actions are logged in real time:
+    <pre>{ "email_id": "MSG-7890", "rule": "market_abuse", "action": "quarantined", "timestamp": "2026-02-19T15:30Z" }</pre>
+    Regulators can inspect this log on demand — no black-box AI.
+  </li>
+</ol>
+
+<h2>No Trader Action Required. No Cloud Dependency.</h2>
+
+<p>Traders send email normally in Zoho or Outlook. Compliance happens silently in the background. This is how sovereign AI earns its place in global finance: <strong>invisible, mandatory, and trustworthy</strong>.</p>
+
+<p><strong>All 100% offline. All under your control.</strong></p>
+
+</body>
+</html>
