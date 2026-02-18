@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Investment Banks – Sovereign Compliance with Kiwacht-Edge</title>
+  <title>Investment Banks – Sovereign Data Transfer Across Jurisdictions</title>
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #1e293b; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
     h1, h2, h3 { color: #0f172a; }
@@ -15,85 +15,91 @@
 </head>
 <body>
 
-<h1>Investment Banks: Sovereign Compliance Without Cloud Risk</h1>
+<h1>Sovereign Data Transfer Across Jurisdictions for Investment Banks</h1>
 
-<p>Global banks face a growing dilemma: Microsoft’s AI tools promise productivity — but at the cost of data sovereignty, regulatory compliance, and operational resilience.</p>
+<p>Global banks don’t just send emails, they share trading notes, client reports, voice transcripts, compliance logs, and internal analytics across offices in New York, London, Frankfurt, and Singapore. Each transfer crosses legal boundaries governed by GDPR, DORA, MiFID II, UK GDPR, and more.</p>
 
 <div class="warning">
-  <strong>⚠️ The Copilot Problem:</strong> Even when used inside Outlook, Microsoft Copilot sends your emails, attachments, and prompts to Azure for processing. According to Microsoft’s documentation, this data is used to “provide context” and may be retained for model improvement — unless explicitly opted out. In practice, this means sensitive trading strategies, client names, and internal discussions leave your perimeter, violating GDPR, DORA, and MiFID II.
+  <strong>⚠️ The Cloud Risk:</strong> Tools like Microsoft Copilot, Mosaic Smart Data, or Behavox require sensitive data, emails, chat logs, voice recordings to leave your perimeter. Even if encrypted, this data flows through US or third-party cloud infrastructure, exposing it to the CLOUD Act, Schrems II invalidation, and vendor lock-in.
 </div>
 
 <div class="warning">
-  <strong>⚠️ The Outlook Risk:</strong> Microsoft has already begun sunsetting legacy protocols and restricting third-party access. In 2023, it disabled basic auth for millions of tenants overnight. There is no guarantee Outlook will remain accessible — or compliant — in a post-Schrems II world.
+  <strong>⚠️ The Fragmentation Problem:</strong> There is no “one-size-fits-all” rule. A file sent from NY to London may need PII redaction for GDPR, while the same file sent internally in the US requires no changes. Manual review doesn’t scale and human error risks fines.
 </div>
 
-<h2>A Safer Path: Sovereign Email + Central Gatekeeping</h2>
+<h2>A Sovereign Alternative - Central Gatekeeping for All Data</h2>
 
-<p>We recommend a two-part strategy:</p>
-
-<ol>
-  <li><strong>Switch to a sovereign email provider</strong> like <a href="https://www.zoho.com/mail/" target="_blank">Zoho Mail</a> (EU-hosted, GDPR-compliant, IMAP/SMTP enabled)</li>
-  <li><strong>Deploy Kiwacht-Edge as a Central Compliance Gatekeeper</strong> that automatically scans all outbound communications</li>
-</ol>
+<p>Kiwacht-Edge replaces fragile, cloud-dependent workflows with a single, offline compliance layer that automatically handles <strong>all outbound data</strong>, email, files, chat exports, voice transcripts, and more, based on destination-specific rules.</p>
 
 <div class="safe">
-  <strong>✅ Why this works:</strong> Zoho keeps your email in Europe. Kiwacht-Edge ensures every message complies with internal rules — without relying on Microsoft’s cloud or risking sudden service changes.
+  <strong>✅ Why this works!</strong> Your data stays under local legal control, whether in the EU, UK, US, or APAC, because Kiwacht-Edge enforces jurisdiction-aware compliance rules offline, without relying on external vendors or risking sudden service changes.
 </div>
 
-<h2>The Only Viable Approach: Network-Level Email Interception</h2>
+<h2>The Only Viable Approach is Network-Level Data Interception</h2>
 
-<p>Relying on traders to “drag emails into folders” fails. Compliance must be automatic, systematic, and invisible.</p>
+<p>Relying on individuals to “tag” or “redact” data fails. Compliance must be automatic, systematic, and invisible.</p>
 
-<h3>How It Works – Step by Step</h3>
+<h3>How It Works - Step by Step</h3>
 
 <ol>
   <li>
-    <strong>Configure Email Journaling</strong><br>
-    In your mail server (e.g., Zoho Mail, on-prem Exchange), enable <strong>journaling</strong> to copy all outbound messages to a secure local folder:<br>
-    <code>/kiwacht-edge/inbound/journal/</code>
+    <strong>Define Your Data Egress Points</strong><br>
+    Identify all channels where data leaves your office:
+    <ul>
+      <li>Email (Outlook, Zoho, etc.)</li>
+      <li>File shares (SMB, SharePoint sync folders)</li>
+      <li>Chat exports (Teams, Symphony logs)</li>
+      <li>Voice transcript directories</li>
+    </ul>
+    Configure these to copy outbound items to a secure local directory:<br>
+    <code>/kiwacht-edge/outbound/pending/</code>
   </li>
 
   <li>
     <strong>Deploy Kiwacht-Edge Appliance</strong><br>
-    Run Kiwacht-Edge on a dedicated machine (Intel N100 or better) in your London/NY/Frankfurt office. It watches the journal folder continuously.
+    Run Kiwacht-Edge on a dedicated machine in each jurisdiction (NY, London, etc.). It watches the pending folder continuously.
   </li>
 
   <li>
-    <strong>Define Your Rules</strong><br>
-    Create <code>compliance_rules.json</code>:
+    <strong>Define Jurisdiction-Aware Rules</strong><br>
+    Create <code>data_transfer_rules.json</code>:
     <pre>{
-  "cross_border_eu": {
-    "if_recipient_domain_in": ["@bank.eu", "@client.de"],
-    "actions": ["redact_pii", "strip_exif", "add_watermark: 'INTERNAL-EU'"]
+  "to_eu": {
+    "if_destination_in": ["@bank.eu", "@client.de"],
+    "actions": ["redact_pii", "strip_exif", "remove_voice_metadata", "add_watermark: 'INTERNAL-EU'"]
   },
-  "market_abuse": {
+  "market_sensitivity": {
     "keywords": ["insider", "non-public", "front-run", "off-book"],
     "actions": ["quarantine", "alert_compliance_officer"]
+  },
+  "internal_us": {
+    "if_destination_in": ["@bank.us"],
+    "actions": ["allow_full_data"]
   }
 }</pre>
   </li>
 
   <li>
     <strong>Automatic Enforcement</strong><br>
-    For every email:
+    For every item:
     <ul>
-      <li>If sent to EU → auto-redact client names, strip metadata, add footer</li>
-      <li>If contains “insider” → hold in quarantine, notify compliance lead</li>
-      <li>If clean → release to original outbound queue</li>
+      <li>If sent to EU → auto-redact names, strip EXIF/metadata, add footer</li>
+      <li>If contains sensitive phrases → hold in quarantine, notify compliance</li>
+      <li>If internal US → allow unchanged</li>
     </ul>
   </li>
 
   <li>
     <strong>Audit & Oversight</strong><br>
     All actions are logged in real time:
-    <pre>{ "email_id": "MSG-7890", "rule": "market_abuse", "action": "quarantined", "timestamp": "2026-02-19T15:30Z" }</pre>
-    Regulators can inspect this log on demand — no black-box AI.
+    <pre>{ "item_id": "FILE-7890", "type": "voice_transcript", "rule": "to_eu", "action": "redacted", "timestamp": "2026-02-19T15:30Z" }</pre>
+    Regulators can inspect this log on demand, no black-box cloud AI.
   </li>
 </ol>
 
-<h2>No Trader Action Required. No Cloud Dependency.</h2>
+<h2>No User Action Required. No Cloud Dependency.</h2>
 
-<p>Traders send email normally in Zoho or Outlook. Compliance happens silently in the background. This is how sovereign AI earns its place in global finance: <strong>invisible, mandatory, and trustworthy</strong>.</p>
+<p>Traders, analysts, and compliance officers work as usual. Data flows through their normal tools such as Outlook, Teams, shared drives. Kiwacht-Edge enforces compliance silently in the background.</p>
 
 <p><strong>All 100% offline. All under your control.</strong></p>
 
